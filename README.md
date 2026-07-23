@@ -1,6 +1,6 @@
 # Supply Chain Crisis Room
 
-A hackathon project for simulating multi-agent supply chain crisis negotiations.
+A hackathon project for simulating multi-agent supply chain crisis negotiations. quite past its submittion deadline and probably  still shipping the idea :)
 
 ## Structure
 
