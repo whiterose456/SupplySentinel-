@@ -45,3 +45,9 @@ We provide scripts to score simulation outcomes and compare multi-agent negotiat
 - Run `python backend/eval/run_baseline.py` to record baseline responses.
 - Run `python backend/eval/run_multiagent.py` to run the agent-based simulation.
 - Use `score.py` to print comparison metrics.
+
+## Technology Stack
+
+- **Backend**: Python, FastAPI, LangGraph, Qwen/Dashscope API
+- **Frontend**: React, Next.js, Tailwind CSS, TypeScript, WebSockets
+- **Simulation Engine**: Custom state machine with prompt-guided LLM agents
