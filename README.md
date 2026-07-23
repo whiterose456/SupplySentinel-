@@ -55,3 +55,9 @@ We provide scripts to score simulation outcomes and compare multi-agent negotiat
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Future Enhancements
+
+- Add support for deeper supply-chain graph networks.
+- Integrate historical dataset training for agents.
+- Support real-world API triggers for carrier tracking.
