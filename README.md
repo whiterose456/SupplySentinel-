@@ -51,3 +51,7 @@ We provide scripts to score simulation outcomes and compare multi-agent negotiat
 - **Backend**: Python, FastAPI, LangGraph, Qwen/Dashscope API
 - **Frontend**: React, Next.js, Tailwind CSS, TypeScript, WebSockets
 - **Simulation Engine**: Custom state machine with prompt-guided LLM agents
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
