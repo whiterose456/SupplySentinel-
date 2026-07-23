@@ -32,3 +32,9 @@ The backend employs a LangGraph workflow orchestrating three key agents:
 - **CFO Agent**: Evaluates financial impacts, profit margins, and budget constraints.
 - **Logistics Agent**: Manages shipping routes, inventory levels, and carrier contracts.
 - **Mediator Agent**: Facilitates consensus and resolves conflicts between departments.
+
+## Key Features
+
+- **Interactive Scenario Builder**: Configure crisis situations dynamically.
+- **Live Negotiation Chat**: Watch agents debate and align on options.
+- **Real-Time Financial Dashboard**: Track cost impact, SLA status, and risk index live.
