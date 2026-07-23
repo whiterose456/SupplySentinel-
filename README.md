@@ -38,3 +38,10 @@ The backend employs a LangGraph workflow orchestrating three key agents:
 - **Interactive Scenario Builder**: Configure crisis situations dynamically.
 - **Live Negotiation Chat**: Watch agents debate and align on options.
 - **Real-Time Financial Dashboard**: Track cost impact, SLA status, and risk index live.
+
+## Evaluation & Baseline Testing
+
+We provide scripts to score simulation outcomes and compare multi-agent negotiations against baseline heuristics:
+- Run `python backend/eval/run_baseline.py` to record baseline responses.
+- Run `python backend/eval/run_multiagent.py` to run the agent-based simulation.
+- Use `score.py` to print comparison metrics.
