@@ -3,14 +3,29 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from app.graph.build_graph import graph
+from app.graph.build_graph import graph, build_negotiation_graph
 from app.graph.nodes import propose_plan, critique_plan, finalize_plan
 from app.agents.mediator_agent import mediator_node
 
 
 def test_graph_compiles_and_runs():
+    class DummyResponse:
+        def __init__(self, content):
+            self.content = content
+
+    class DummyLLM:
+        def invoke(self, messages):
+            return DummyResponse(
+                "AGREEMENT REACHED: YES\n"
+                'FORCED COMPROMISE RULING — EXECUTION PLAN '
+                '{shipping_mode: "Hybrid Air/Sea", total_cost: 240000, delivery_time: 5, rationale: "Balanced cost and speed."}'
+            )
+
+    test_graph = build_negotiation_graph(DummyLLM())
+
     state = {
-        "scenario": "Port disruption",
+        "scenario_id": "test_port",
+        "scenario_description": "Port disruption",
         "constraints": {
             "total_units": 5000,
             "deadline_days": 7,
@@ -30,12 +45,14 @@ def test_graph_compiles_and_runs():
             "cost_overrun_tolerance_pct": 0.1,
         },
         "debate_log": [],
-        "round": 0,
+        "current_round": 1,
+        "round": 1,
+        "max_rounds": 3,
         "converged": False,
         "final_plan": None,
     }
 
-    result = graph.invoke(state)
+    result = test_graph.invoke(state)
     assert result["converged"] is True
     assert result["final_plan"] is not None
     assert result["final_plan"]["rationale"]
