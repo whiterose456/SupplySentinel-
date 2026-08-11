@@ -5,8 +5,15 @@ Runs same scenarios through a single LLM prompt (no multi-agent negotiation).
 Used to prove multi-agent system outperforms naive approach.
 """
 
-from testqwen.testqwen import get_llm
-from scenarios.sample_scenarios import ALL_SCENARIOS
+import sys
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
+from app.testqwen.testqwen import get_llm
+from app.scenarios.sample_scenarios import ALL_SCENARIOS
 from langchain_core.messages import HumanMessage, SystemMessage
 
 BASELINE_PROMPT = """You are a supply chain AI assistant. Given the following crisis scenario, 
