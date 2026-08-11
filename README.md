@@ -42,6 +42,8 @@ The backend employs a LangGraph workflow orchestrating three key agents:
 ## Evaluation & Baseline Testing
 
 We provide scripts to score simulation outcomes and compare multi-agent negotiations against baseline heuristics:
+- Run `pytest` inside `backend/` directory to run automated unit tests offline.
+- Run `python backend/test_imports.py` to verify package import integrity.
 - Run `python backend/eval/run_baseline.py` to record baseline responses.
 - Run `python backend/eval/run_multiagent.py` to run the agent-based simulation.
 - Use `score.py` to print comparison metrics.
