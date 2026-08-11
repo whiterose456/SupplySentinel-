@@ -1,2 +1,0 @@
-API_PREFIX = "/api"
-WEBSOCKET_PREFIX = "/ws"
