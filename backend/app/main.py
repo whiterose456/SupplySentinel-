@@ -1,4 +1,4 @@
-# backend/ws/main.py
+# backend/app/main.py
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect
 from fastapi.middleware.cors import CORSMiddleware
 import json
@@ -141,7 +141,7 @@ def calculate_baseline_comparison(final_plan: dict, scenario: dict) -> dict:
 @app.get("/api/scenarios")
 async def list_scenarios():
     """List available crisis scenarios"""
-    from scenarios.sample_scenarios import ALL_SCENARIOS
+    from app.scenarios.sample_scenarios import ALL_SCENARIOS
     
     return [
         {
