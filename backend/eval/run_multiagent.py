@@ -5,11 +5,15 @@ Runs scenarios through the full negotiation graph and measures performance.
 """
 
 import sys
-sys.path.append("..")
+from pathlib import Path
 
-from testqwen.testqwen import get_llm
-from scenarios.sample_scenarios import ALL_SCENARIOS
-from graph.build_graph import build_negotiation_graph, create_initial_state
+ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
+from app.testqwen.testqwen import get_llm
+from app.scenarios.sample_scenarios import ALL_SCENARIOS
+from app.graph.build_graph import build_negotiation_graph, create_initial_state
 
 def run_multiagent_evaluation(scenario: dict) -> dict:
     """Run full multi-agent negotiation on one scenario"""
