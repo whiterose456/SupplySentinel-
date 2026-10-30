@@ -61,5 +61,5 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ## Future Enhancements
 
 - Add support for deeper supply-chain graph networks.
-- Integrate historical dataset training for agents.
+- integrating training historical for agent
 - Support real-world API triggers for carrier tracking.
